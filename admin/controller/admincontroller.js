@@ -1,5 +1,7 @@
 const adminService = require('../service/adminService')
 const catchAsync = require('../../utils/CatchAsync')
+const path = require("path");
+
 
 const approveDoctor = catchAsync(async (req, res) => {
     const { doctorId } = req.body;
@@ -19,8 +21,16 @@ const deleteDoctor = catchAsync(async (req, res) => {
     return res.status(200).json({ msg: "Doctor deleted successfully", response });
 });
 
+const getDoctorCV = catchAsync(async (req, res) => {
+    const { doctorId } = req.params;
+    const filePath = await adminService.getDoctorCV(doctorId);
+
+    res.download(filePath, path.basename(filePath));
+});
+
 module.exports = {
     approveDoctor,
     rejectDoctor,
-    deleteDoctor
+    deleteDoctor,
+    getDoctorCV
 }

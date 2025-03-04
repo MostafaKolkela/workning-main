@@ -8,7 +8,10 @@ router.route('/approveDoctor')
 router.route('/rejectDoctor')
             .post(adminController.rejectDoctor)
 
-router.route('/deleteDoctor')
+router.route('/deleteDoctor/:doctorId')
             .delete(adminController.deleteDoctor)
+
+router.route('/doctorCv/:doctorId')
+            .get(adminController.getDoctorCV)
 
 module.exports = router
