@@ -1,7 +1,5 @@
-const Doctor = require("../doctors/doctorModel.js");
-const AppError = require('../../utils/AppError');
-const path = require("path");
-
+import * as Doctor from '../../doctor/doctorModel.js'
+import AppError from "../../utils/AppError";
 
 const approveDoctor =  async(doctorId)=>{
 

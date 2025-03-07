@@ -1,6 +1,6 @@
-const express = require('express')
+import express from 'express'
 const router = express.Router();
-const adminController = require('../controller/admincontroller')
+import * as adminController from '../controller/admincontroller'
 
 router.route('/approveDoctor')
             .post(adminController.approveDoctor)

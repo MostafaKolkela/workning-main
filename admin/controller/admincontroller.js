@@ -1,6 +1,6 @@
-const adminService = require('../service/adminService')
-const catchAsync = require('../../utils/CatchAsync')
-const path = require("path");
+import path from 'path';
+import catchAsync from '../../utils/CatchAsync';
+import * as adminService from '../service/adminService'
 
 
 const approveDoctor = catchAsync(async (req, res) => {
